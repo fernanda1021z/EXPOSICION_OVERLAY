@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlays en CSS - Guía Profesional</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>✦ CSS Overlays</h1>
+            <p class="subtitle">Domina la superposición de elementos en diseño web</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" onclick="showTab(0)">Introducción</button>
+            <button class="tab" onclick="showTab(1)">Tipos de Overlays</button>
+            <button class="tab" onclick="showTab(2)">Ejemplos</button>
+            <button class="tab" onclick="showTab(3)">Interactivo</button>
+        </div>
+
+        <!-- Tab 1: Introducción (con más información y profundidad) -->
+        <div id="tab0" class="tab-content">
+            <div class="card">
+                <h2>¿Qué es un Overlay en CSS?</h2>
+                <p>Un <strong>Overlay</strong> es una capa visual que se superpone sobre otro elemento o sección de la página. Es una de las técnicas más importantes y utilizadas en el diseño web moderno para mejorar la interacción y la estética.</p>
+                
+                <h3>¿Para qué se utilizan?</h3>
+                <ul>
+                    <li>Crear atractivos efectos hover en imágenes, tarjetas y galerías</li>
+                    <li>Mostrar información adicional sin navegar a otra página</li>
+                    <li>Desarrollar modales, menús móviles y lightboxes</li>
+                    <li>Mejorar la jerarquía visual y guiar la atención del usuario</li>
+                    <li>Indicar estados interactivos (botones, notificaciones, loading)</li>
+                    <li>Crear efectos cinematográficos con oscurecimiento y gradientes</li>
+                </ul>
+
+                <h3>Conceptos clave para crear Overlays</h3>
+                <p>Los overlays se basan principalmente en las siguientes propiedades de CSS:</p>
+                <ul>
+                    <li><code>position: absolute</code> o <code>position: fixed</code> — Permite sacar el elemento del flujo normal del documento.</li>
+                    <li><code>z-index</code> — Controla el orden de apilamiento de los elementos.</li>
+                    <li><code>background</code> con valores <code>rgba()</code> o <code>hsla()</code> — Para controlar la transparencia.</li>
+                    <li><code>transition</code> y <code>transform</code> — Para crear animaciones suaves.</li>
+                    <li><code>backdrop-filter</code> — (Avanzado) Aplica desenfoque al contenido detrás del overlay.</li>
+                </ul>
+
+                <h3>Buenas prácticas</h3>
+                <ul>
+                    <li>Siempre usa un contenedor con <code>position: relative</code> para overlays internos.</li>
+                    <li>Considera la accesibilidad: asegúrate de que el contenido sea legible y navegable con teclado.</li>
+                    <li>Optimiza el rendimiento evitando animaciones pesadas en muchos elementos.</li>
+                    <li>Usa unidades relativas (%, rem, vh) para que sean responsive.</li>
+                </ul>
+
+                <p><strong>Nota:</strong> Los overlays son la base de componentes modernos como modales, tooltips, dropdowns y hero sections con texto superpuesto.</p>
+            </div>
+        </div>
+
+        <!-- Tab 2 -->
+        <div id="tab1" class="tab-content" style="display:none;">
+            <div class="card">
+                <h2>Tipos de Overlays</h2>
+                
+                <h3>1. Overlay Simple con Hover</h3>
+                <div class="overlay-demo">
+                    <img src="img/demo1.jpg" alt="Ejemplo">
+                    <div class="overlay">
+                        <div>
+                            <h3>Proyecto Web</h3>
+                            <p>Diseño moderno y responsive</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2. Overlay con Gradiente</h3>
+                <div class="overlay-demo">
+                    <img src="img/demo2.avif" alt="Ejemplo">
+                    <div class="overlay gradient">
+                        <div>
+                            <h3>Gradiente Oscuro</h3>
+                            <p>Efecto elegante y profesional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3 -->
+        <div id="tab2" class="tab-content" style="display:none;">
+            <div class="card">
+                <h2>Ejemplos Prácticos</h2>
+                <button onclick="toggleFullOverlay()" class="btn-primary">
+                    Ver Overlay a Pantalla Completa
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab 4 -->
+        <div id="tab3" class="tab-content" style="display:none;">
+            <div class="card">
+                <h2>Overlay Interactivo</h2>
+                <p>Ajusta la opacidad del overlay:</p>
+                
+                <input type="range" id="opacitySlider" min="0" max="100" value="65">
+                <p>Opacidad actual: <strong><span id="opacityValue">65</span>%</strong></p>
+
+                <div class="overlay-demo" style="height: 380px;">
+                    <img src="img/demo3.avif" alt="Demo">
+                    <div id="dynamicOverlay" class="overlay">
+                        <div>
+                            <h3>Overlay Dinámico</h3>
+                            <p>¡Cambia la opacidad en tiempo real!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Overlay -->
+    <div id="fullOverlay" class="full-overlay">
+        <span class="close-btn" onclick="toggleFullOverlay()">✕</span>
+        <div class="full-overlay-content">
+            <h1>Overlay Full Screen</h1>
+            <p>Este tipo de overlay ocupa toda la pantalla y se usa comúnmente para modales importantes.</p>
+            <button onclick="toggleFullOverlay()" class="btn-primary">Cerrar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
